@@ -52,4 +52,4 @@ jobs:
           chmod 600 "$HOME/.ssh/id_rsa"
 
       - name: Deployment
-        run: rsync -c -r -l -O -t -e "ssh -p ${{ secrets.ssh_port }} -i $HOME/.ssh/id_rsa -o StrictHostKeyChecking=no" -a -z --delete . ${{ secrets.deploy_path }}
+        run: cd build && rsync -c -r -l -O -t -e "ssh -p ${{ secrets.ssh_port }} -i $HOME/.ssh/id_rsa -o StrictHostKeyChecking=no" -a -z --delete . ${{ secrets.deploy_path }}
