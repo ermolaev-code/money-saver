@@ -23,5 +23,8 @@ module.exports = {
     tsconfigRootDir: __dirname,
   },
   plugins: ['react', '@typescript-eslint', 'prettier'],
-  rules: {},
+  rules: {
+    'import/extensions': 'off',
+    'import/prefer-default-export': 'off',
+  },
 }
