@@ -1,65 +1,99 @@
-.app-layout {
+// .app-layout {
+//   display: flex;
+//   flex: auto;
+//   flex-direction: column;
+// }
+
+// .app-layout-has-sider {
+//   flex-direction: row;
+//   min-height: 100vh;
+// }
+
+// .app-sidebar {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   width: 300px;
+//   background-color: #d9d9d9;
+// }
+
+// .app-menu {
+//   width: 100%;
+//   margin: 40px 0 0 0;
+//   padding: 0;
+//   list-style-type: none;
+//   font-size: 14px;
+//   font-weight: bold;
+
+//   .item {
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     margin: 4px 16px 8px 24px;
+//     text-align: center;
+//     line-height: 30px;
+//     border-radius: 5px;
+//     cursor: pointer;
+
+//     &:hover:not(.selected) {
+//       background-color: lightgray;
+//     }
+
+//     a {
+//       width: -webkit-fill-available;
+//       text-decoration: none;
+//       color: black;
+//     }
+//   }
+
+//   .selected {
+//     background-color: black;
+
+//     a {
+//       color: white;
+//     }
+//   }
+// }
+
+// .app-content {
+//   padding: 24px;
+
+//   h1 {
+//     margin: 0;
+//     padding: 0;
+//   }
+// }
+
+.layout {
   display: flex;
   flex: auto;
   flex-direction: column;
+
+  &:has(.sidebar) {
+    flex-direction: row;
+    min-height: 100vh;
+  }
 }
 
-.app-layout-has-sider {
-  flex-direction: row;
-  min-height: 100vh;
-}
-
-.app-sidebar {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 300px;
+.sidebar {
+  width: 176px;
   background-color: #d9d9d9;
+  padding: 12px;
+  transition: all .2s;
 }
 
-.app-menu {
-  width: 100%;
-  margin: 40px 0 0 0;
-  padding: 0;
-  list-style-type: none;
-  font-size: 14px;
-  font-weight: bold;
+// @media screen and (max-width: 992px) {
+//   .sidebar {
+//     width: 56px;
+//   }
+// }
 
-  .item {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 4px 16px 8px 24px;
-    text-align: center;
-    line-height: 30px;
-    border-radius: 5px;
-    cursor: pointer;
-
-    &:hover:not(.selected) {
-      background-color: lightgray;
-    }
-
-    a {
-      width: -webkit-fill-available;
-      text-decoration: none;
-      color: black;
-    }
-  }
-
-  .selected {
-    background-color: black;
-
-    a {
-      color: white;
-    }
-  }
+.content {
+  flex: auto;
+  padding: 12px;
 }
 
-.app-content {
-  padding: 24px;
-
-  h1 {
-    margin: 0;
-    padding: 0;
-  }
+.footer {
+  background-color: #efe9e9;
+  padding: 12px;
 }
