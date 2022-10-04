@@ -1,3 +1,4 @@
 import useAppRoutes from './useAppRoutes'
+import useMediaQueries from './useMediaQueries'
 
-export { useAppRoutes }
+export { useAppRoutes, useMediaQueries }
