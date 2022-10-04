@@ -69,31 +69,8 @@
   flex: auto;
   flex-direction: column;
 
-  &:has(.sidebar) {
+  &:has(.sider) {
     flex-direction: row;
     min-height: 100vh;
   }
-}
-
-.sidebar {
-  width: 176px;
-  background-color: #d9d9d9;
-  padding: 12px;
-  transition: all .2s;
-}
-
-// @media screen and (max-width: 992px) {
-//   .sidebar {
-//     width: 56px;
-//   }
-// }
-
-.content {
-  flex: auto;
-  padding: 12px;
-}
-
-.footer {
-  background-color: #efe9e9;
-  padding: 12px;
 }
