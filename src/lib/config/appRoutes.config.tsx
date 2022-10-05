@@ -1,36 +1,41 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { CreditCardOutlined, HomeOutlined, TagsOutlined } from '@ant-design/icons'
 import { TRoute } from '@/lib/types'
 import { TransactionsPage, CategoriesPage, InvoicesPage } from '@/ui/pages'
-import { Layout } from '@/ui/components'
+import { AppLayout } from '@/ui/components'
 
 export const getAppRoutes = (): TRoute[] => {
   return [
     {
       key: 'app',
       path: '/',
-      element: <Layout />,
+      element: <AppLayout />,
       children: [
         {
           key: 'transactions_page',
+          label: <Link to="/">Главная</Link>,
           title: 'Главная',
-          subTitile: 'Добро пожаловать, Username',
+          caption: 'Добро пожаловать, Username',
           path: '/',
           element: <TransactionsPage />,
-          isMenuItem: true,
+          icon: <HomeOutlined />,
         },
         {
           key: 'categories_page',
+          label: <Link to="/categories">Категории</Link>,
           title: 'Категории',
           path: '/categories',
           element: <CategoriesPage />,
-          isMenuItem: true,
+          icon: <TagsOutlined />,
         },
         {
           key: 'invoices_page',
+          label: <Link to="/invoices">Счета</Link>,
           title: 'Счета',
           path: '/invoices',
           element: <InvoicesPage />,
-          isMenuItem: true,
+          icon: <CreditCardOutlined />,
         },
       ],
     },

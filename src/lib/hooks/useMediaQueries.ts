@@ -12,7 +12,6 @@ type TypeMatches = {
 
 enum EnumSizes {
   sm = '575.98px',
-  md = '767.98px',
 }
 
 export default function useMediaQueries() {
