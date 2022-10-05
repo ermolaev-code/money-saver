@@ -1,6 +1,8 @@
-import Layout from './Layout'
-import Sider from './Sider'
-import Content from './Content'
-import Footer from './Footer'
+import AppLayout from './AppLayout'
+import AppSider from './AppSider'
+import AppSiderMobile from './AppSiderMobile'
+import AppContent from './AppContent'
+import AppMenu from './AppMenu'
+import AppLogo from './AppLogo'
 
-export { Layout, Sider, Content, Footer }
+export { AppLayout, AppSider, AppSiderMobile, AppContent, AppMenu, AppLogo }

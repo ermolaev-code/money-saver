@@ -12,14 +12,14 @@ const loopRoutes = (items: TRoute[], matcher: Function): TRoute[] => {
 
 const useAppRoutes = (): TRoutes => {
   const { pathname } = useLocation()
-  const items = getAppRoutes()
-  const menuItems = loopRoutes(items, (route: TRoute) => route.isMenuItem)
-  const active = loopRoutes(items, (route: TRoute) => route.path === pathname)[0]
+  const routes = getAppRoutes()
+  const menuItems = loopRoutes(routes, (route: TRoute) => route.icon)
+  const selectedRoute = loopRoutes(routes, (route: TRoute) => route.path === pathname)[0]
 
   return {
-    items,
+    routes,
+    selectedRoute,
     menuItems,
-    active,
   }
 }
 

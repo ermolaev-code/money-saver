@@ -2,16 +2,17 @@ import { ReactNode } from 'react'
 
 export type TRoute = {
   key: string
+  label?: ReactNode
   title?: string
-  subTitile?: string
+  caption?: string
   path: string
   element: ReactNode
+  icon?: ReactNode
   children?: TRoute[]
-  isMenuItem?: boolean
 }
 
 export type TRoutes = {
-  items: TRoute[]
+  routes: TRoute[]
+  selectedRoute: TRoute
   menuItems: TRoute[]
-  active: TRoute
 }
