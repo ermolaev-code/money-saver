@@ -39,6 +39,5 @@ jobs:
 
       - name: Deployment
         run: | 
-          cd backend 
-          rsync -c -r -l -O -t -e "ssh -p ${{ secrets.ssh_port }} -i $HOME/.ssh/id_rsa -o StrictHostKeyChecking=no" -a -z --delete . ${{ secrets.ssh_user }}@${{ secrets.server_port }}:${{ secrets.server_back_path }}
+          cd backend && rsync -c -r -l -O -t -e "ssh -p ${{ secrets.ssh_port }} -i $HOME/.ssh/id_rsa -o StrictHostKeyChecking=no" -a -z --delete . ${{ secrets.ssh_user }}@${{ secrets.server_port }}:${{ secrets.server_back_path }}
 
