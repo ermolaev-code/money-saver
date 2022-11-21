@@ -27,11 +27,8 @@ jobs:
       - name: App test
         run: cd frontend && npm run test
 
-      - name: App env
-        run: cd frontend && echo "${{ secrets.server_front_env }}" > ".env"
-
       - name: App build
-        run: cd frontend && npm run build
+        run: cd frontend && echo "${{ secrets.server_front_env }}" > .env && ls && cat .env && npm run build
 
       - name: Upload build
         uses: actions/upload-artifact@v3
