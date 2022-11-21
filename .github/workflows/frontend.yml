@@ -18,29 +18,26 @@ jobs:
         with:
           node-version: 16.x
 
-      - name: Frontend
-        run: cd frontend
-
       - name: Install dependencies
-        run: npm i --force
+        run: cd frontend && npm ci
 
       - name: App lint
-        run: npm run lint
+        run: cd frontend && npm run lint
 
       - name: App test
-        run: npm run test
+        run: cd frontend && npm run test
 
       - name: App env
-        run: echo "${{ secrets.server_front_env }}" > ".env"
+        run: cd frontend && echo "${{ secrets.server_front_env }}" > ".env"
 
       - name: App build
-        run: npm run build
+        run: cd frontend && npm run build
 
       - name: Upload build
         uses: actions/upload-artifact@v3
         with:
           name: frontend-build
-          path: ./build
+          path: cd frontend/build
 
   deploy:
     runs-on: ubuntu-latest
