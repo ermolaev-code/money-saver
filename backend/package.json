@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf build && tsc",
     "start": "concurrently \"tsc -w\"  \"nodemon build/index.js\"",
+    "lint": "echo backend lint",
+    "build": "rimraf build && tsc",
     "serve": "node build/index.js"
   },
   "author": "",

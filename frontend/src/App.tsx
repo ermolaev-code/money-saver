@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 function App() {
+  const [state, setState] = useState(null)
+
   useEffect(() => {
     fetch('/api')
       .then(res => res.json())
-      .then(data => console.log(data))
+      .then(({ message }) => setState(message))
   }, [])
 
-  return <div className="App">App</div>
+  return <div className="App">App {state}</div>
 }
 
 export default App

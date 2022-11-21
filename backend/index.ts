@@ -4,7 +4,7 @@ const PORT = 3001
 const app: Express = express()
 
 app.get('/api', (req: Request, res: Response) => {
-  res.json({ message: 'Hi' })
+  res.json({ message: '"Hi from server"' })
 })
 
 app.listen(PORT, () => {
