@@ -18,11 +18,9 @@ jobs:
         with:
           node-version: 16.x
 
-      - run: | 
-        cd backend
-        npm ci
-        npm run lint
-        npm run build
+      - run: cd backend && npm ci
+      - run: cd backend && npm run lint
+      - run: cd backend && npm run build
 
   deploy:
     runs-on: ubuntu-latest
