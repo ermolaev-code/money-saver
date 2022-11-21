@@ -38,6 +38,5 @@ jobs:
           chmod 600 "$HOME/.ssh/id_rsa"
 
       - name: Deployment
-        run: | 
-          cd backend && rsync -c -r -l -O -t -e "ssh -p ${{ secrets.ssh_port }} -i $HOME/.ssh/id_rsa -o StrictHostKeyChecking=no" -a -z --delete . ${{ secrets.ssh_user }}@${{ secrets.server_port }}:${{ secrets.server_back_path }}
+        run: cd backend && rsync -c -r -l -O -t -e "ssh -p ${{ secrets.ssh_port }} -i $HOME/.ssh/id_rsa -o StrictHostKeyChecking=no" -a -z --delete . ${{ secrets.ssh_user }}@${{ secrets.server_port }}:${{ secrets.server_back_path }}
 
